@@ -12,7 +12,10 @@ public class StartButton : MonoBehaviour
     }
     public void Click()
     {
-        GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().Play();//戻り値がなければメソッドをつなげれる。チェインメソッド
+        //AudioSource audio = GetComponent<AudioSource>();
+        //audio.Play();
+
         Invoke("Change", 1f);
     }
     // Start is called before the first frame update

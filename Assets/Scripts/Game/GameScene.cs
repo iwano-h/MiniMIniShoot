@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AddFloor : MonoBehaviour
+public class GameScene : MonoBehaviour
 {
-    public Transform f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +13,6 @@ public class AddFloor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            Instantiate(f, transform.position, transform.rotation);
-        }
+        
     }
 }
