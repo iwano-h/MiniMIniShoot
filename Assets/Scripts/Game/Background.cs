@@ -24,7 +24,7 @@ public class Background : MonoBehaviour
         float x = Mathf.Floor(target_x / (WIDTH * SCALE)) * WIDTH;
         bg1_.transform.localPosition = new Vector3(x, bg1_.transform.localPosition.y, bg1_.transform.localPosition.z);
         bg2_.transform.localPosition = new Vector3(x + WIDTH, bg1_.transform.localPosition.y, bg1_.transform.localPosition.z);
-
+        //無限スクロール背景
 
     }
 }

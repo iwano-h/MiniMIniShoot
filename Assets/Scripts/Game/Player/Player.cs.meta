@@ -3,7 +3,11 @@ guid: 7e46504f39d5f4eb8ab495dbcd22eca7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - joystick_: {instanceID: 0}
+  - player_: {instanceID: 0}
+  - bullet_: {instanceID: 0}
+  - attackPoint_: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

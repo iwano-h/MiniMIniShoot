@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -9,13 +10,17 @@ public class Player : MonoBehaviour
    
     private Rigidbody rb_;
 
-
+    [SerializeField] public GameObject player_;
     [SerializeField] public GameObject bullet_; //バレットプレハブを格納
     [SerializeField] public Transform attackPoint_;//アタックポイントを格納
 
-    [SerializeField] public float attackTime_ = 0.2f; //攻撃の間隔
+    [SerializeField] public float attackTime_ = 0.1f; //攻撃の間隔
     private float currentAttackTime_; //攻撃の間隔を管理
     private bool canAttack_; //攻撃可能状態かを指定するフラグ
+    public bool moved = false;
+
+    public float gravity = 1.0f;
+    
 
     void Start()
     {
@@ -27,22 +32,54 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        moved = false;
+        
         Vector3 moveVector = (Vector3.right * joystick_.Horizontal + Vector3.forward * joystick_.Vertical);
-        // 右・左のデジタル入力値を x に渡す
-        float x = joystick_.Horizontal;//Input.GetAxisRaw("Horizontal");
-        // 上・下のデジタル入力値 y に渡す
-        float y = joystick_.Vertical;//Input.GetAxisRaw("Vertical");
+       //  joystick 
+        Transform transform = this.transform;
+        Vector2 localAngle = transform.localEulerAngles;
+        float targetAngleX = 0;//0度
+        //Debug.Log(joystick_.Horizontal);で確認　左−1、0、右1
+        
+        if (0 < joystick_.Horizontal)//右
+        {
+            targetAngleX = 45;
+            localAngle.y = 90;
+            moved = true;
+        } else if(0 > joystick_.Horizontal) //左
+        {
+            targetAngleX = 45;
+            localAngle.y = -90;
+            moved = true;
+        } else // default左右を入力していない時
+        {
+            targetAngleX = 0;
+            moved = false;
+        }
+
+        if(joystick_.Vertical > 0)//上昇時
+        {
+            targetAngleX = 0;
+            moved = true;
+        }
+
+        localAngle.x += (targetAngleX - localAngle.x) / 3;//＊ターゲットに徐々に近づく式     
+        transform.localEulerAngles = localAngle;//toransform.localEulerAnglesはオイラー角（４５度etc）を取得する
+        //rotationでの返り値はQuatertionであるためVector3は代入できない（オイラー角取得不可）
+
         // 移動する向きを求める
         // x と y の入力値を正規化して direction に渡す
         Vector2 direction = joystick_.Direction;//new Vector2(x, y).normalized;
+        direction.y -= gravity;
         // 移動する向きとスピードを代入する
         // Rigidbody コンポーネントの velocity に方向と移動速度を掛けた値を渡す
         rb_.velocity = direction * speed_;
 
-        Attack();
+
+        CheckAttack();
     }
 
-    public void Attack()
+    public void CheckAttack()
     {
         
         attackTime_ += Time.deltaTime; //attackTimeに毎フレームの時間を加算していく
@@ -54,14 +91,32 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.K)) //Kキーを押したら
         {
+            GetComponent<AudioSource>().Play();
             if (canAttack_)
             {
+                Debug.Log(attackPoint_.position);
                 //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
-                Instantiate(bullet_, attackPoint_.position, bullet_.transform.rotation);
+                Instantiate(bullet_, attackPoint_.position,
+                    transform.rotation);
                 canAttack_ = false;　//攻撃フラグをfalseにする
                 attackTime_ = 0f;　//attackTimeを0に戻す
             }
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Invoke("Change", 2f);
+            //GameObject.Destroy(this.gameObject);このオブジェクトを消すとエラーが出る、とりあえずはゲームオーバーにする
+            // gameover he
+        }
+    }
+    public void Change()
+    {
+        SceneManager.LoadScene("Gameover");
     }
 
 
