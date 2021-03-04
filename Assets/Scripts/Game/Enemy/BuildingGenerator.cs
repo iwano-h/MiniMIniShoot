@@ -8,7 +8,9 @@ public class BuildingGenerator : MonoBehaviour
     [SerializeField] public float interval_;
     [SerializeField] public float timer_;
     [SerializeField] public Transform targetTrans_;
-    public bool isLeft_ = false;
+    
+    //public bool isLeft_ = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,9 @@ public class BuildingGenerator : MonoBehaviour
             targetTrans_.position.z
             );
         Instantiate(Building_,buildingPosition, Quaternion.identity);
-        isLeft_ = !fromLeft;
+        //isLeft_ = !fromLeft;
     }
+    
+
+
 }

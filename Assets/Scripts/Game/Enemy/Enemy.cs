@@ -6,17 +6,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed_ = 1;
+    public float speed_ = 10;
     public bool isLeft_ = true;
 
     private Rigidbody rb_;
-
     
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb_ = GetComponent<Rigidbody>();
+        Transform transform = this.transform;
     }
 
     // Update is called once per frame

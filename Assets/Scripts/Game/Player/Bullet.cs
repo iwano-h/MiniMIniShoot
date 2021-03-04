@@ -9,8 +9,8 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-    }
+        //BulletとPlayerの不具合（弾を打つとプレイヤーが回転）Layer　PlayerとBulletを指定
+    }   //BulletとPlayerの当たり判定を制御する
 
     // Update is called once per frame
     void Update()

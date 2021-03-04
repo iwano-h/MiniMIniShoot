@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 5779670677620234648}
   m_Layer: 0
   m_Name: Heli_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,6 +253,8 @@ MonoBehaviour:
   bullet_: {fileID: 3401408584320007654, guid: 4fd4adb6921754786a994fad182a20fe, type: 3}
   attackPoint_: {fileID: 5779670675796842365}
   attackTime_: 0.2
+  moved: 0
+  gravity: 1
 --- !u!54 &5779670675590329022
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -43,13 +43,13 @@ public class Player : MonoBehaviour
         
         if (0 < joystick_.Horizontal)//右
         {
-            targetAngleX = 45;
-            localAngle.y = 90;
-            moved = true;
-        } else if(0 > joystick_.Horizontal) //左
-        {
-            targetAngleX = 45;
-            localAngle.y = -90;
+            targetAngleX = 45;                          //localAngle.x += (45 - 0)/3
+            localAngle.y = 90;                          //15 += (45 - 15)/3
+            moved = true;                               //25 += (45 - 25)/3
+        } else if(0 > joystick_.Horizontal) //左        //31.67 += (45 - 31.67)/3 
+        {                                               //36.11 += (45 - 36.11)/3
+            targetAngleX = 45;                          //39.07 += (45 - 39.07)/3
+            localAngle.y = -90;                         //45 += (45 - 45)/3なるまで処理が続く
             moved = true;
         } else // default左右を入力していない時
         {
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
         rb_.velocity = direction * speed_;
 
 
-        CheckAttack();
+        CheckAttack();//AttackするかどうかなのでCheckAttackメソッド
     }
 
     public void CheckAttack()
