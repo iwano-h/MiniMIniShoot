@@ -34,7 +34,7 @@ public class EnemyGenerator : MonoBehaviour
             targetTrans_.position.z //z
             );
         GameObject enemy = Instantiate(enemy_, enemyPosition, Quaternion.identity);
-        enemy.GetComponent<Enemy>().isLeft_ = !fromLeft;//EnemyクラスのisLeft_は2/1の確率ではない
+        enemy.GetComponent<Enemy>().isLeft_ = !fromLeft;//EnemyクラスのisLeft_は2/1の確率
         //[(enemy_, enemyPosition, Quaternion.identity)が複製され、GameObjectのenemyに代入される]よく使われる！
     }
 }

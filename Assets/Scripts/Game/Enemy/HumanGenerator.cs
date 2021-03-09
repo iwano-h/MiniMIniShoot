@@ -19,19 +19,19 @@ public class HumanGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer_ += Time.deltaTime;
-        if (timer_ < interval_)
-        {
-            return;
-        }
-        timer_ = 0;
-
         
 
+        
+        //ターゲットが消ええたときにhumanを生成したい
         Vector3 humanPosition = new Vector3(
-            targetTrans_.position.x, targetTrans_.position.y, targetTrans_.position.z
+            targetTrans_.position.x, // x
+            targetTrans_.position.y, // y
+            targetTrans_.position.z //z
             );
         GameObject human = Instantiate(human_, humanPosition, Quaternion.identity);
+        
+
+
         
     }
 }
