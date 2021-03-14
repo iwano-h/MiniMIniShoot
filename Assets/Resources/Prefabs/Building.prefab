@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5214767371733354393}
   m_Layer: 0
   m_Name: Building
-  m_TagString: Enemy
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6570242612355672913}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0, y: 0.5, z: 0.3}
+  m_LocalPosition: {x: -0, y: 1, z: 0.37}
   m_LocalScale: {x: 0.35, y: 0.25, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -138,5 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d727e5394213445e58b8211eab278874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  human_: {fileID: 4192496752382393215, guid: 8e8824a6365d6491fbbe9fcb85ad3da9, type: 3}
+  human_: {fileID: 6746797228562904726, guid: 9ea7e7b0894d44701b14476f199ef170, type: 3}
   appearPoint_: {fileID: 6570242612356167537}
+  breakEffect: {fileID: 0}

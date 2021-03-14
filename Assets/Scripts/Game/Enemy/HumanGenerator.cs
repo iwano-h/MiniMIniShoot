@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HumanGenerator : MonoBehaviour
 {
+    
     public GameObject human_;
     [SerializeField] public float interval_;
     [SerializeField] public float timer_;
@@ -19,6 +20,7 @@ public class HumanGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool fromLeft = Random.Range(0, 100) > 50;
         
 
         
@@ -28,8 +30,8 @@ public class HumanGenerator : MonoBehaviour
             targetTrans_.position.y, // y
             targetTrans_.position.z //z
             );
-        GameObject human = Instantiate(human_, humanPosition, Quaternion.identity);
-        
+        GameObject human = Instantiate(human_, humanPosition, Quaternion.Euler(0f, fromLeft ? -90f : 90f, 10f));
+        human.GetComponent<Human>().isLeft_ = !fromLeft;
 
 
         

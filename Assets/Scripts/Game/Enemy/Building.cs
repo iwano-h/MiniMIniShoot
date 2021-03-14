@@ -8,6 +8,7 @@ public class Building : MonoBehaviour
     [SerializeField] public GameObject human_;
     [SerializeField] public Transform appearPoint_;
     private bool canAppear_;
+    public GameObject breakEffect;   
     
     // Start is called before the first frame update
     void Start()
@@ -27,19 +28,30 @@ public class Building : MonoBehaviour
         {
 
             GameObject.Destroy(this.gameObject);
-
+            //EffectGo();
             AppearGo();
         }
     }
     public void AppearGo()
     {
         canAppear_ = true;
+
         if (canAppear_)
         {
-            Instantiate(human_, appearPoint_.position, transform.rotation);
+            for (int i = 0; i < 5; i++)
+            {
+                Instantiate(human_, appearPoint_.position, transform.rotation);
+            }
 
         }
         canAppear_ = false;
     }
+    /*
+    void EffectGo()
+    {
+        GameObject effect = Instantiate(breakEffect) as GameObject;
+        effect.transform.position = gameObject.transform.position;
+    }
+    */
 
 }

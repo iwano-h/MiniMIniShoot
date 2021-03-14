@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] public float attackTime_ = 0.1f; //攻撃の間隔
     private float currentAttackTime_; //攻撃の間隔を管理
     private bool canAttack_; //攻撃可能状態かを指定するフラグ
+    //private float moveTime;
     public bool moved = false;
 
     public float gravity = 1.0f;
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         moved = false;
-        
+        //moveTime = Time.deltaTime;
         Vector3 moveVector = (Vector3.right * joystick_.Horizontal + Vector3.forward * joystick_.Vertical);
        //  joystick 
         Transform transform = this.transform;
@@ -64,7 +65,7 @@ public class Player : MonoBehaviour
         }
 
         localAngle.x += (targetAngleX - localAngle.x) / 3;//＊ターゲットに徐々に近づく式     
-        transform.localEulerAngles = localAngle;//toransform.localEulerAnglesはオイラー角（４５度etc）を取得する
+        transform.localEulerAngles = localAngle;//toransform.localEulerAnglesはオイラー角（~度etc）を取得する
         //rotationでの返り値はQuatertionであるためVector3は代入できない（オイラー角取得不可）
 
         // 移動する向きを求める
@@ -107,7 +108,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Building")
         {
             Invoke("Change", 2f);
             //GameObject.Destroy(this.gameObject);このオブジェクトを消すとエラーが出る、とりあえずはゲームオーバーにする
