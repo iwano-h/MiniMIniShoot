@@ -28,7 +28,7 @@ public class Building : MonoBehaviour
         {
 
             GameObject.Destroy(this.gameObject);
-            //EffectGo();
+            EffectGo();
             AppearGo();
         }
     }
@@ -46,12 +46,12 @@ public class Building : MonoBehaviour
         }
         canAppear_ = false;
     }
-    /*
+    
     void EffectGo()
     {
         GameObject effect = Instantiate(breakEffect) as GameObject;
         effect.transform.position = gameObject.transform.position;
     }
-    */
+    
 
 }

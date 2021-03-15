@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4555486889562728642}
   - component: {fileID: 7012217125063444460}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hills Layer 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8886844456570031807}
   - component: {fileID: 565200943497023266}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hills Layer 06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4338790514262881457}
   - component: {fileID: 2542622236066070161}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hills Layer 04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,8 +252,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7773203633025300349}
-  m_Layer: 0
-  m_Name: BackGraound
+  m_Layer: 11
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,7 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7773203633362782795}
   - component: {fileID: 7773203633362782792}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hills Layer 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7773203633616060550}
   - component: {fileID: 7773203633616060551}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hills Layer 03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7773203634279347652}
   - component: {fileID: 7773203634279347653}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hills Layer 05
   m_TagString: Untagged
   m_Icon: {fileID: 0}

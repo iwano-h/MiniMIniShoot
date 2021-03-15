@@ -1096,8 +1096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed_: 8
   isLeft_: 1
-  breakEffect: {fileID: 8268045190467377973, guid: b5246f983d3024a7aad060c54a21a967,
-    type: 3}
+  breakEffect: {fileID: 100012, guid: a905d8e5159ffeb46baa8d2a7624717f, type: 3}
 --- !u!1 &4997610524033252964
 GameObject:
   m_ObjectHideFlags: 0

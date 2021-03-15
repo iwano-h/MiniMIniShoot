@@ -140,4 +140,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   human_: {fileID: 6746797228562904726, guid: 9ea7e7b0894d44701b14476f199ef170, type: 3}
   appearPoint_: {fileID: 6570242612356167537}
-  breakEffect: {fileID: 0}
+  breakEffect: {fileID: 100000, guid: 158e34f943d2d564ca6ddfab52fe1525, type: 3}
