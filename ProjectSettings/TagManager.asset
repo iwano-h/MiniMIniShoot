@@ -21,7 +21,7 @@ TagManager:
   - Bullet
   - Enemy
   - Background
-  - 
+  - Building
   - 
   - 
   - 
@@ -42,12 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Background
+    uniqueID: 2524404269
     locked: 0
   - name: Building
     uniqueID: 479084983
     locked: 0
-  - name: Background
-    uniqueID: 2524404269
+  - name: Default
+    uniqueID: 0
     locked: 0

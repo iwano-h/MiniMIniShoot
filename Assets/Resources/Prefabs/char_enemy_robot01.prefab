@@ -1094,9 +1094,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22fe801529e8447f9b9faa6a8953faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed_: 8
+  speed_: 3
   isLeft_: 1
-  breakEffect: {fileID: 100012, guid: a905d8e5159ffeb46baa8d2a7624717f, type: 3}
+  breakEffect: {fileID: 3424006486150629477, guid: 095c7a840bff5478c8724c3877131d79,
+    type: 3}
 --- !u!1 &4997610524033252964
 GameObject:
   m_ObjectHideFlags: 0
