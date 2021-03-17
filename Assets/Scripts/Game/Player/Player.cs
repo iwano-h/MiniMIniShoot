@@ -21,7 +21,8 @@ public class Player : MonoBehaviour
     public bool moved = false;
 
     public float gravity = 1.0f;
-    
+    public GameObject breakEffect;
+
 
     void Start()
     {
@@ -110,6 +111,8 @@ public class Player : MonoBehaviour
         Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Building")
         {
+            this.gameObject.SetActive(false);
+            EffectGo();
             Invoke("Change", 2f);
             //GameObject.Destroy(this.gameObject);このオブジェクトを消すとエラーが出る、とりあえずはゲームオーバーにする
             // gameover he
@@ -118,6 +121,11 @@ public class Player : MonoBehaviour
     public void Change()
     {
         SceneManager.LoadScene("Gameover");
+    }
+    void EffectGo()
+    {
+        GameObject effect = Instantiate(breakEffect) as GameObject;
+        effect.transform.position = gameObject.transform.position;
     }
 
 

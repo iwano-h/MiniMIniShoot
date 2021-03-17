@@ -16,7 +16,7 @@ public class Human : MonoBehaviour
     {
         rb_ = GetComponent<Rigidbody>();
         Transform transform = this.transform;
-        isLeft_ = Random.Range(0, 100) > 50 ? true : false;
+        isLeft_ = Random.Range(0, 100) > 50;
         transform.localEulerAngles = new Vector3(0, isLeft_ ? 180 : 0, 0);
     }
 
