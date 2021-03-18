@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Building")
         {
             this.gameObject.SetActive(false);
-            EffectGo();
+            Effect();
             Invoke("Change", 2f);
             //GameObject.Destroy(this.gameObject);このオブジェクトを消すとエラーが出る、とりあえずはゲームオーバーにする
             // gameover he
@@ -122,10 +122,11 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene("Gameover");
     }
-    void EffectGo()
+    void Effect()
     {
         GameObject effect = Instantiate(breakEffect) as GameObject;
         effect.transform.position = gameObject.transform.position;
+        
     }
 
 
