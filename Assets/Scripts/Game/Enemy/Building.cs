@@ -26,8 +26,8 @@ public class Building : MonoBehaviour
         Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Bullet")
         {
-
             GameObject.Destroy(this.gameObject);
+            GetComponent<AudioSource>().Play();
             EffectGo();
             AppearGo();
         }

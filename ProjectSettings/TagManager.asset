@@ -24,9 +24,9 @@ TagManager:
   - Background
   - Building
   - Effect
-  - 
-  - 
-  - 
+  - Depth1
+  - Depth0
+  - Depth-2
   - 
   - 
   - 
@@ -48,6 +48,9 @@ TagManager:
     locked: 0
   - name: Building
     uniqueID: 479084983
+    locked: 0
+  - name: Effect
+    uniqueID: 2823070635
     locked: 0
   - name: Default
     uniqueID: 0

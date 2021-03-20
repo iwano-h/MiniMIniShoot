@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
         Debug.Log(collision.gameObject.tag);//inspectorのtagでグループ分けをする"Ballet"グループにする
         if(collision.gameObject.tag == "Bullet") {
             GameObject.Destroy(this.gameObject);//Balletグループに接触すると、このgameObjectは消える
+            GetComponent<AudioSource>().Play();
             Effect();
         }
     }

@@ -35,14 +35,15 @@ public class Human : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             GameObject.Destroy(this.gameObject);
-            //EffectGo();
+            GetComponent<AudioSource>().Play();
+            EffectGo();
         }
     }
-    /*
+    
     void EffectGo()
     {
         GameObject effect = Instantiate(breakEffect) as GameObject;
         effect.transform.position = gameObject.transform.position;
     }
-    */
+    
 }
