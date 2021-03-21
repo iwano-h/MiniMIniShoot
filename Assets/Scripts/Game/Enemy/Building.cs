@@ -28,7 +28,7 @@ public class Building : MonoBehaviour
         {
             GameObject.Destroy(this.gameObject);
             GetComponent<AudioSource>().Play();
-            EffectGo();
+            CreateEffect();
             AppearGo();
         }
     }
@@ -47,7 +47,7 @@ public class Building : MonoBehaviour
         canAppear_ = false;
     }
     
-    void EffectGo()
+    void CreateEffect()
     {
         GameObject effect = Instantiate(breakEffect) as GameObject;
         effect.transform.position = gameObject.transform.position;

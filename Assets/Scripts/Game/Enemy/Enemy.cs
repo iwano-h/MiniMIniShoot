@@ -45,12 +45,12 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.tag == "Bullet") {
             GameObject.Destroy(this.gameObject);//Balletグループに接触すると、このgameObjectは消える
             GetComponent<AudioSource>().Play();
-            Effect();
+            CreateEffect();
         }
     }
-    void Effect()
-    {
-        GameObject effect = Instantiate(breakEffect) as GameObject;
+    void CreateEffect()
+    { 
+       GameObject effect = Instantiate(breakEffect) as GameObject;
         effect.transform.position = gameObject.transform.position;
     }
 }
