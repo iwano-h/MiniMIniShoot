@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public float gravity = 1.0f;
     public GameObject breakEffect;
 
+    public GameObject questionPanel;
 
     void Start()
     {
@@ -113,21 +114,31 @@ public class Player : MonoBehaviour
         {
             this.gameObject.SetActive(false);//this.gameObjectを非アクティブにする(オブジェクトを非表示にする)
             CreateEffect();
-            Invoke("Change", 2f);
+            Invoke("CreatePanel", 1.5f);
+            //Invoke("Change", 2f);
             //GameObject.Destroy(this.gameObject);このオブジェクトを消すとエラーが出る、とりあえずはゲームオーバーにする
             // gameover he
         }
     }
+        /*
+    
     public void Change()
     {
         SceneManager.LoadScene("Gameover");
     }
+        */
     void CreateEffect()
     {
         GameObject effect = Instantiate(breakEffect) as GameObject;
         effect.transform.position = gameObject.transform.position;
         
     }
+    void CreatePanel()
+    {
+        questionPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
 
 
 

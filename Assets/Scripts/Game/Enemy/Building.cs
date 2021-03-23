@@ -23,7 +23,7 @@ public class Building : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.tag);
+        //Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Bullet")
         {
             GameObject.Destroy(this.gameObject);

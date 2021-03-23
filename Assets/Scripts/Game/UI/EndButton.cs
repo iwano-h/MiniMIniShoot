@@ -4,17 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour
+public class EndButton : MonoBehaviour
 {
+    
     
     // Start is called before the first frame update
     void Start()
     {
         
     }
+
     public void Change()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Gameover");
     }
     public void Click()
     {
