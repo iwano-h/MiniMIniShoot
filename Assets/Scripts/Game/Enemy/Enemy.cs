@@ -37,6 +37,10 @@ public class Enemy : MonoBehaviour
         */
 
     }
+    public void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

@@ -255,6 +255,9 @@ MonoBehaviour:
   attackTime_: 0.2
   moved: 0
   gravity: 1
+  breakEffect: {fileID: 6911823777879888056, guid: a62e1739e2e314a68b3d5f4be54e2644,
+    type: 3}
+  questionPanel: {fileID: 0}
 --- !u!54 &5779670675590329022
 Rigidbody:
   m_ObjectHideFlags: 0

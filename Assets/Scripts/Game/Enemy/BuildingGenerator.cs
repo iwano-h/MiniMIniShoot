@@ -47,6 +47,10 @@ public class BuildingGenerator : MonoBehaviour
         Instantiate(Building_,buildingPosition, Quaternion.Euler(0f,180f,0f));
         //isLeft_ = !fromLeft;
     }
+    public void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
 
     bool NearBuildingExistsCheck()//近くにビルが有るか？チェックする関数
     {

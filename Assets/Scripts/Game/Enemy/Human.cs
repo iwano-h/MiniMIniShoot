@@ -54,9 +54,7 @@ public class Human : MonoBehaviour
         Vector2 direction = new Vector2(x, 0);
         //Vector2 direction = new Vector2(isLeft_ ? -1 : 1, 0);
         rb_.velocity = direction * speed_;//velocityは渡した値で
-
    
-        
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -75,5 +73,9 @@ public class Human : MonoBehaviour
         GameObject effect = Instantiate(breakEffect) as GameObject;
         effect.transform.position = gameObject.transform.position;
     }
-    
+    public void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
+
 }
