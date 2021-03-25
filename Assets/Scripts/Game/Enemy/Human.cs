@@ -61,7 +61,7 @@ public class Human : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             GameObject.Destroy(this.gameObject);
-            GetComponent<AudioSource>().Play();
+            
             EffectGo();
             //Score.score += scoreValue; static(静的Scoreクラスがもつscore変数)1個だけ　参照しなくても取得できる
             score.AddScore(scoreValue);　//インスタンスがもつscore変数　複数　unityが自動的に造る　
@@ -72,6 +72,7 @@ public class Human : MonoBehaviour
     {
         GameObject effect = Instantiate(breakEffect) as GameObject;
         effect.transform.position = gameObject.transform.position;
+        GetComponent<AudioSource>().Play();
     }
     public void OnBecameInvisible()
     {

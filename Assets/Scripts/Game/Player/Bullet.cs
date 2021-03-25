@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
         foward.x = foward.x * speed_;//計算式改変　speed_の数値変更
         foward.y = foward.y * speed_;
         transform.position += foward;//前方方向の向きに対して進行する
-        Debug.LogFormat("x:{0} y:{1}", foward.x, foward.y);
+        //Debug.LogFormat("x:{0} y:{1}", foward.x, foward.y);
 
         //if(transform.position.x < -10 && transform.position.x > 10)
         //{

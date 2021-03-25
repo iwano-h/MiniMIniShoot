@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    //private Rigidbody rb_;
-    [SerializeField] public GameObject human_;
+    private float time;
+    public int count;
+    [SerializeField] public GameObject[] human_;
     [SerializeField] public Transform appearPoint_;
     private bool canAppear_;
     public GameObject breakEffect;   
@@ -27,7 +28,7 @@ public class Building : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             GameObject.Destroy(this.gameObject);
-            GetComponent<AudioSource>().Play();
+            
             CreateEffect();
             AppearGo();
         }
@@ -35,14 +36,18 @@ public class Building : MonoBehaviour
     public void AppearGo()
     {
         canAppear_ = true;
-
-        if (canAppear_)
+        time -= Time.deltaTime;
+        if (time <= 0.0f)
         {
-            for (int i = 0; i < 5; i++)
+            time = 0.7f;
+            count = Random.Range(3, 10);
+            Instantiate(human_[count], appearPoint_.position, transform.rotation);
+            /*
+            for (int i = 0; i < 10; i++)
             {
-                Instantiate(human_, appearPoint_.position, transform.rotation);
+                Instantiate(human_[count], appearPoint_.position, transform.rotation);
             }
-
+            */
         }
         canAppear_ = false;
     }
@@ -51,6 +56,7 @@ public class Building : MonoBehaviour
     {
         GameObject effect = Instantiate(breakEffect) as GameObject;
         effect.transform.position = gameObject.transform.position;
+        GetComponent<AudioSource>().Play();
     }
     
 
