@@ -11,18 +11,20 @@ public class RePlayButton : MonoBehaviour
     {
         
     }
-    public void Change()
-    {
-        SceneManager.LoadScene("Title");
-    }
-    public void Click()
-    {
-        Invoke("Change", 1.5f);
-        GetComponent<AudioSource>().Play();
-    }
+    
     // Update is called once per frame
     void Update()
     {
         
     }
+    public void SceneChange()
+    {
+        SceneManager.LoadScene("Title");
+    }
+    public void Click()
+    {
+        Invoke("SceneChange", 1.5f);
+        GetComponent<AudioSource>().Play();
+    }
+
 }

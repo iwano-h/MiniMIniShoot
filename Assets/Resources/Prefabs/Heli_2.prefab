@@ -218,7 +218,6 @@ Transform:
   - {fileID: 820391172322857791}
   - {fileID: 820391172322857787}
   - {fileID: 820391172322857785}
-  - {fileID: 5779670675796842365}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -249,9 +248,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed_: 3
   joystick_: {fileID: 0}
-  player_: {fileID: 0}
-  bullet_: {fileID: 3401408584320007654, guid: 4fd4adb6921754786a994fad182a20fe, type: 3}
-  attackPoint_: {fileID: 5779670675796842365}
   attackTime_: 0.2
   moved: 0
   gravity: 1
@@ -449,47 +445,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &5779670675796842362
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5779670675796842365}
-  - component: {fileID: 6530113695567197528}
-  m_Layer: 0
-  m_Name: AttackPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5779670675796842365
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5779670675796842362}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 820391172322857789}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &6530113695567197528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5779670675796842362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e7fa4f60926448386de7125c39c25d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed_: 10

@@ -37,6 +37,12 @@ public class Human : MonoBehaviour
         }
         transform.localEulerAngles = new Vector3(0, rotY, 0);
         //transform.localEulerAngles = new Vector3(0, isLeft_ ? 180 : 0, 0);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         float x = 0;
         if (isLeft_ == true)//isLeft_がtrueの時が左
         {
@@ -50,14 +56,8 @@ public class Human : MonoBehaviour
         //Vector2 direction = new Vector2(isLeft_ ? -1 : 1, 0);
         rb_.velocity = direction * speed_;//velocityは渡した値で
         score = GameObject.Find("ScoreUI").GetComponent<Score>();//よく使われる
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-   
+
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -79,7 +79,7 @@ public class Human : MonoBehaviour
     }
     public void OnBecameInvisible()
     {
-        Destroy(this.gameObject);
+        gameObject.SetActive(false);
     }
 
 }

@@ -10,9 +10,9 @@ public class Player : MonoBehaviour
    
     private Rigidbody rb_;
 
-    [SerializeField] public GameObject player_;
-    [SerializeField] public GameObject bullet_; //バレットプレハブを格納
-    [SerializeField] public Transform attackPoint_;//アタックポイントを格納
+    
+    //[SerializeField] public GameObject bullet_; //バレットプレハブを格納（弾単発）
+    //[SerializeField] public Transform attackPoint_;//アタックポイントを格納(使われてない)
 
     [SerializeField] public float attackTime_ = 0.1f; //攻撃の間隔
     private float currentAttackTime_; //攻撃の間隔を管理
@@ -79,12 +79,12 @@ public class Player : MonoBehaviour
         rb_.velocity = direction * speed_;
 
 
-        CheckAttack();//AttackするかどうかなのでCheckAttackメソッド
+        //CheckAttack();//AttackするかどうかなのでCheckAttackメソッド(弾単発)
     }
-
+    /*(弾単発)
     public void CheckAttack()
     {
-        
+       
         attackTime_ += Time.deltaTime; //attackTimeに毎フレームの時間を加算していく
 
         if (attackTime_ > currentAttackTime_)
@@ -92,12 +92,12 @@ public class Player : MonoBehaviour
             canAttack_ = true; //指定時間を超えたら攻撃可能にする
         }
 
-        if (Input.GetKeyDown(KeyCode.K)) //Kキーを押したら
+        if (Input.GetKeyDown(KeyCode.A)) //Kキーを押したら
         {
             GetComponent<AudioSource>().Play();
             if (canAttack_)
             {
-                Debug.Log(attackPoint_.position);
+                //Debug.Log(attackPoint_.position);
                 //第一引数に生成するオブジェクト、第二引数にVector3型の座標、第三引数に回転の情報
                 Instantiate(bullet_, attackPoint_.position,
                     transform.rotation);
@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
             }
         }
     }
-
+    */
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.tag);
@@ -115,9 +115,7 @@ public class Player : MonoBehaviour
             this.gameObject.SetActive(false);//this.gameObjectを非アクティブにする(オブジェクトを非表示にする)
             CreateEffect();
             Invoke("CreatePanel", 1.5f);
-            //Invoke("Change", 2f);
-            //GameObject.Destroy(this.gameObject);このオブジェクトを消すとエラーが出る、とりあえずはゲームオーバーにする
-            // gameover he
+            
         }
     }
         /*

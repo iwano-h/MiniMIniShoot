@@ -7,7 +7,7 @@ public class Building : MonoBehaviour
     
     private float screenSide_;
     private Rigidbody rb_;
-    [SerializeField] public GameObject human_;
+    [SerializeField] public GameObject human_ = null;
     [SerializeField] public Transform appearPoint_;
     private bool canAppear_;
     public float apperDely_ = 0.1f;
@@ -16,7 +16,8 @@ public class Building : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //rb_ = GetComponent<Rigidbody>();
+        
+        
     }
 
     // Update is called once per frame
@@ -33,13 +34,18 @@ public class Building : MonoBehaviour
             
             CreateEffect();
 
+            rb_ = GetComponent<Rigidbody>();
             StartCoroutine(AppearGo());
         }
     }
     IEnumerator AppearGo()
     {
-        CanAppear();
-        yield return new WaitForSeconds(apperDely_);
+        while (true)
+        {
+            CanAppear();
+            yield return new WaitForSeconds(apperDely_);
+        }
+        
     }
     public void CanAppear()
     {
