@@ -5,10 +5,10 @@ using UnityEngine;
 public class Human : MonoBehaviour
 {
     public GameObject breakEffect;
-    public float speed_ = 1;
+    public float humanspeed_ = 1;
     public bool isLeft_ = true;
     
-    private Rigidbody rb_;
+    public Rigidbody humanrb_;
     
     public int scoreValue;  // これが敵を倒すと得られる点数になる
     private Score score;//Scoreクラスのインスタンスのscore変数を参照
@@ -16,7 +16,7 @@ public class Human : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb_ = GetComponent<Rigidbody>();
+        humanrb_ = GetComponent<Rigidbody>();
         Transform transform = this.transform;
         if(Random.Range(0, 100) > 50)//Renge関数の戻り値(0~100)が50と比較して大きい場合
         {
@@ -37,12 +37,16 @@ public class Human : MonoBehaviour
         }
         transform.localEulerAngles = new Vector3(0, rotY, 0);
         //transform.localEulerAngles = new Vector3(0, isLeft_ ? 180 : 0, 0);
-        
+        //Humanのスピードをランダムにすること自然に散らばる
+        humanspeed_ *= Random.Range(0.8f, 1.2f);
+        //HumanのInstantiatのpositionをずらすことでも散らばる
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         float x = 0;
         if (isLeft_ == true)//isLeft_がtrueの時が左
         {
@@ -54,7 +58,7 @@ public class Human : MonoBehaviour
         }
         Vector2 direction = new Vector2(x, 0);
         //Vector2 direction = new Vector2(isLeft_ ? -1 : 1, 0);
-        rb_.velocity = direction * speed_;//velocityは渡した値で
+        humanrb_.velocity = direction * humanspeed_;//velocityは渡した値で
         score = GameObject.Find("ScoreUI").GetComponent<Score>();//よく使われる
 
 

@@ -100,6 +100,7 @@ MonoBehaviour:
   appearPoint_: {fileID: 3504228807498175590}
   breakEffect: {fileID: 371799263537741328, guid: 5085e1abd1bd743c084d9e5891a95fad,
     type: 3}
+  fireSound: {fileID: 8300000, guid: 31dbe1f047a081845bd95a5b256ee829, type: 3}
 --- !u!65 &1389269982048595000
 BoxCollider:
   m_ObjectHideFlags: 0

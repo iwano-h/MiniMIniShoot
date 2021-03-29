@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 820391172322087707}
   - component: {fileID: 820391172320956891}
   - component: {fileID: 820391173442118778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rotor_Twin_Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 820391172322087709}
   - component: {fileID: 820391172320956893}
   - component: {fileID: 820391172258257334}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rotor_Twin_Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 8179099189576199039}
   - component: {fileID: 5779670675590329022}
   - component: {fileID: 5779670677620234648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Heli_2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 820391172322857791}
   - component: {fileID: 820391172322087711}
   - component: {fileID: 820391172320956895}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
