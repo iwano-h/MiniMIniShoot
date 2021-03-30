@@ -1095,10 +1095,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22fe801529e8447f9b9faa6a8953faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed_: 3
+  speed_: 9
   isLeft_: 1
   breakEffect: {fileID: 5874340076252223001, guid: 8fd13e22adb2b45e392e77d0297bc581,
     type: 3}
+  scoreValue: 300
 --- !u!82 &-6571893377005481384
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1109,9 +1110,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 662f8b0fe7f39d341a63968054ccc95d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 324f5296ef639b741abcd771cda87612, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.49
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -22,7 +22,7 @@ public class RePlayButton : MonoBehaviour
         count--;
         if (count <= 0) {
             flg = false;
-            SceneManager.LoadScene("Title");
+            SceneManager.LoadScene("Game");
         }
     }
 

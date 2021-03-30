@@ -3467,6 +3467,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5779670677620234648, guid: 6436a8e9febf140d398c644dfa062bcc,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dcfe736485e63542b5036dc5b360032, type: 3}
     - target: {fileID: 8179099189576199039, guid: 6436a8e9febf140d398c644dfa062bcc,
         type: 3}
       propertyPath: joystick_
@@ -3498,6 +3503,11 @@ PrefabInstance:
       propertyPath: attackPoint_
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8179099189576199039, guid: 6436a8e9febf140d398c644dfa062bcc,
+        type: 3}
+      propertyPath: fireSound_
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dcfe736485e63542b5036dc5b360032, type: 3}
     m_RemovedComponents:
     - {fileID: 6530113695567197528, guid: 6436a8e9febf140d398c644dfa062bcc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6436a8e9febf140d398c644dfa062bcc, type: 3}

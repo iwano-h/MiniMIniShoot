@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public float speed_ = 3;
     public VariableJoystick joystick_;
-   
+    public AudioClip fireSound_;
     private Rigidbody rb_;
 
     
@@ -112,6 +112,7 @@ public class Player : MonoBehaviour
         Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Building")
         {
+            AudioSource.PlayClipAtPoint(fireSound_, transform.position);
             this.gameObject.SetActive(false);//this.gameObjectを非アクティブにする(オブジェクトを非表示にする)
             CreateEffect();
             Invoke("CreatePanel", 1.5f);

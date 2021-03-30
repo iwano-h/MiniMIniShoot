@@ -14,7 +14,9 @@ public class Building : MonoBehaviour
     //public float apperDely_ = 0.1f;
     public GameObject breakEffect;
     public AudioClip fireSound;
-    
+    public int scoreValue;  // これが敵を倒すと得られる点数になる
+    private Score score;//Scoreクラスのインスタンスのscore変数を参照
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,12 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        score = GameObject.Find("ScoreUI").GetComponent<Score>();
+    }
+    public void OnBecameInvisible()
+    {
+        GameObject.Destroy(this.gameObject);
+
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -36,7 +43,7 @@ public class Building : MonoBehaviour
             GameObject.Destroy(this.gameObject);
             AudioSource.PlayClipAtPoint(fireSound, transform.position);
             CreateEffect();
-
+            score.AddScore(scoreValue);
             rb_ = GetComponent<Rigidbody>();
             StartCoroutine(AppearGo());
         }

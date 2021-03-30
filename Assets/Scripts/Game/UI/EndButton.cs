@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class EndButton : MonoBehaviour
 {
-    
-    
+    int count = 90;
+    bool flg = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +18,21 @@ public class EndButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!flg) return;
+
+        count--;
+        if (count <= 0)
+        {
+            flg = false;
+            SceneManager.LoadScene("Gameover");
+        }
     }
-    public void SceneChange()
-    {
-        SceneManager.LoadScene("Gameover");
-    }
+
     public void Click()
     {
-        Invoke("SceneChange", 1.5f);
         GetComponent<AudioSource>().Play();
+        flg = true;
     }
+
+
 }

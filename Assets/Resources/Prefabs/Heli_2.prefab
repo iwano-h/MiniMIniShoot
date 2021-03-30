@@ -246,8 +246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e46504f39d5f4eb8ab495dbcd22eca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed_: 3
+  speed_: 4
   joystick_: {fileID: 0}
+  fireSound_: {fileID: 0}
   attackTime_: 0.2
   moved: 0
   gravity: 1

@@ -7,7 +7,7 @@ public class Human : MonoBehaviour
     public GameObject breakEffect;
     public float humanspeed_ = 1;
     public bool isLeft_ = true;
-    
+    public AudioClip fireSound_;
     public Rigidbody humanrb_;
     
     public int scoreValue;  // これが敵を倒すと得られる点数になる
@@ -63,12 +63,17 @@ public class Human : MonoBehaviour
 
 
     }
+    public void OnBecameInvisible()
+    {
+        GameObject.Destroy(this.gameObject);
+
+    }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Bullet")
+        if(collision.gameObject.tag == "Bullet"|| collision.gameObject.tag == "Player")
         {
             GameObject.Destroy(this.gameObject);
-            
+            AudioSource.PlayClipAtPoint(fireSound_, transform.position);
             EffectGo();
             //Score.score += scoreValue; static(静的Scoreクラスがもつscore変数)1個だけ　参照しなくても取得できる
             score.AddScore(scoreValue);　//インスタンスがもつscore変数　複数　unityが自動的に造る　
@@ -79,11 +84,8 @@ public class Human : MonoBehaviour
     {
         GameObject effect = Instantiate(breakEffect) as GameObject;
         effect.transform.position = gameObject.transform.position;
-        GetComponent<AudioSource>().Play();
+        
     }
-    public void OnBecameInvisible()
-    {
-        gameObject.SetActive(false);
-    }
+    
 
 }

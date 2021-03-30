@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
     public bool isLeft_ = true;
     public GameObject breakEffect;
     private Rigidbody rb_;
-    
+    public int scoreValue;  // これが敵を倒すと得られる点数になる
+    private Score score;//Scoreクラスのインスタンスのscore変数を参照
 
 
     // Start is called before the first frame update
@@ -27,7 +28,7 @@ public class Enemy : MonoBehaviour
         Vector2 direction = new Vector2(isLeft_ ? -1 : 1, 0);
         rb_.velocity = direction * speed_;
         //rb_.AddForce(new Vector3(1, 0, 0));
-       
+
         /*
         if (isLeft_) {
             direction = new Vector2(-1, 0);
@@ -35,7 +36,7 @@ public class Enemy : MonoBehaviour
             direction = new Vector2(1, 0);
         }
         */
-
+        score = GameObject.Find("ScoreUI").GetComponent<Score>();
     }
     public void OnBecameInvisible()
     {
@@ -48,7 +49,7 @@ public class Enemy : MonoBehaviour
         Debug.Log(collision.gameObject.tag);//inspectorのtagでグループ分けをする"Ballet"グループにする
         if(collision.gameObject.tag == "Bullet") {
             GameObject.Destroy(this.gameObject);//Balletグループに接触すると、このgameObjectは消える
-            
+            score.AddScore(scoreValue);
             CreateEffect();
         }
     }
