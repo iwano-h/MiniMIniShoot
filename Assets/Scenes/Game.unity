@@ -781,6 +781,7 @@ MonoBehaviour:
   appearPoint_: {fileID: 860411230}
   breakEffect: {fileID: 0}
   fireSound: {fileID: 0}
+  scoreValue: 0
 --- !u!1001 &618394934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -934,7 +935,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'HIGHSCORE: 0'
+  m_Text: HIGHSCORE  {0}
 --- !u!222 &641957633
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1942,7 +1943,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 0'
+  m_Text: ' Score  {0}'
 --- !u!222 &1063493661
 CanvasRenderer:
   m_ObjectHideFlags: 0
