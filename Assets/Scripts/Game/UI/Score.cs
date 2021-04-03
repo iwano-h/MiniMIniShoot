@@ -8,13 +8,14 @@ public class Score : MonoBehaviour
     public int score;// スコア　(静的クラス)public static int score;現時点で静的にする必要ない
     public int highScore;// ハイスコア
 
-    public Text scoreText = null;// スコアテキスト
+    public Text scoreText;// スコアテキスト
     public Text highScoreText;// ハイスコアテキスト
 
     public static string scoreStr;
-    public static string resultScore;
     public static string highScoreStr;
 
+    public static string scoreResult;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -47,24 +48,26 @@ public class Score : MonoBehaviour
     {
         if(score > 10000)
         {
-            Score.resultScore = "Excellent";
+            Score.scoreResult = "Excellent";
         }
         else if(score > 5000)
         {
-            Score.resultScore = "VeryGood";
+            Score.scoreResult = "VeryGood";
         }
         else if(score > 2500)
         {
-            Score.resultScore = "Good";
+            Score.scoreResult = "Good";
         }
         else if(score > 1250)
         {
-            Score.resultScore = "Average";
+            Score.scoreResult = "Average";
         }
         else
         {
-            Score.resultScore = "Poor";
+            Score.scoreResult = "Poor";
         }
         Score.scoreStr = score.ToString();
+        Score.highScoreStr = highScore.ToString();
     }
+    
 }

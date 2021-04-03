@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody rb_;
     public int scoreValue;  // これが敵を倒すと得られる点数になる
     private Score score;//Scoreクラスのインスタンスのscore変数を参照
-
+    public AudioClip fireSound;
 
     // Start is called before the first frame update
     void Start()
@@ -51,12 +51,13 @@ public class Enemy : MonoBehaviour
             GameObject.Destroy(this.gameObject);//Balletグループに接触すると、このgameObjectは消える
             score.AddScore(scoreValue);
             CreateEffect();
+            AudioSource.PlayClipAtPoint(fireSound, transform.position);
         }
     }
     void CreateEffect()
     { 
         GameObject effect = Instantiate(breakEffect) as GameObject;
         effect.transform.position = gameObject.transform.position;
-        GetComponent<AudioSource>().Play();
+        
     }
 }

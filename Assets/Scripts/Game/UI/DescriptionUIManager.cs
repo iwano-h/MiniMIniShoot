@@ -18,7 +18,7 @@ public class DescriptionUIManager : MonoBehaviour
     }
     public void Click()
     {
-
+        GetComponent<AudioSource>().Play();
         panelAnimation.Play();
         Time.timeScale = 1f;
         //Invoke("GameGo", 2f);
