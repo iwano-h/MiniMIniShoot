@@ -9,6 +9,8 @@ public class Human : MonoBehaviour
     public bool isLeft_ = true;
     public AudioClip fireSound_;
     public Rigidbody humanrb_;
+    public Renderer renderer_;//*
+    Transform playerTrans_;//*
     
     public int scoreValue;  // これが敵を倒すと得られる点数になる
     private Score score;//Scoreクラスのインスタンスのscore変数を参照
@@ -41,6 +43,8 @@ public class Human : MonoBehaviour
         humanspeed_ *= Random.Range(0.8f, 1.2f);
         //HumanのInstantiatのpositionをずらすことでも散らばる
 
+        playerTrans_ = GameObject.Find("Heli_2").GetComponent<Transform>();
+        //*スタートでプレイヤーの位置情報を取得
     }
 
     // Update is called once per frame
@@ -61,11 +65,17 @@ public class Human : MonoBehaviour
         humanrb_.velocity = direction * humanspeed_;//velocityは渡した値で
         score = GameObject.Find("ScoreUI").GetComponent<Score>();//よく使われる
 
+        //プレイヤーとの距離をチェック。静的Vector3クラスのDistance関数
+        if (!renderer_.isVisible && Vector3.Distance(gameObject.transform.position,playerTrans_.position) > 20)
+        {
+            GameObject.Destroy(this.gameObject);
+        }
+
 
     }
-    public void OnBecameInvisible()
+    public void OnBecameInvisible()//画面外で生成されるオブジェクトには効果ない
     {
-        GameObject.Destroy(this.gameObject);
+        ///GameObject.Destroy(this.gameObject);
 
     }
     private void OnCollisionEnter(Collision collision)

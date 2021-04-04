@@ -20,6 +20,7 @@ public class EnemyGenerator : MonoBehaviour
     {
         timer_ += Time.deltaTime;
 
+       
         if (timer_ < interval_)
         {
             return;
@@ -30,7 +31,7 @@ public class EnemyGenerator : MonoBehaviour
         //三項演算子　x が+ か- になる　[targetTrans(player)を中心に-10(左)か、10(右)に2/1の確率で生成される]
         Vector3 enemyPosition = new Vector3(
             fromLeft ? targetTrans_.position.x - 10 : targetTrans_.position.x + 10, // x
-            Random.Range(3,10), // y
+            Random.Range(3f,10.5f), // y
             targetTrans_.position.z //z
             );
         GameObject enemy = Instantiate(enemy_, enemyPosition, Quaternion.Euler(0f,180f,0f));

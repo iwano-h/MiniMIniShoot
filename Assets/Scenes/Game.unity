@@ -1246,7 +1246,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 04f423841d9fff345a394fdb44f4bac4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3273,7 +3273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_: {fileID: 4997593226862470248, guid: ea1c259a5602d42e5a3e76150ae01a0f, type: 3}
-  interval_: 20
+  interval_: 10
   timer_: 0
   targetTrans_: {fileID: 5907881182846577316}
 --- !u!4 &2076404136

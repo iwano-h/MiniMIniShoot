@@ -1100,6 +1100,7 @@ MonoBehaviour:
   breakEffect: {fileID: 5874340076252223001, guid: 8fd13e22adb2b45e392e77d0297bc581,
     type: 3}
   scoreValue: 300
+  fireSound: {fileID: 8300000, guid: 662f8b0fe7f39d341a63968054ccc95d, type: 3}
 --- !u!82 &-6571893377005481384
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1110,9 +1111,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 324f5296ef639b741abcd771cda87612, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.49
+  m_Volume: 0.59
   m_Pitch: 1
   Loop: 0
   Mute: 0

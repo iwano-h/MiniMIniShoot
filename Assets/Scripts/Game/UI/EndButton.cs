@@ -30,6 +30,10 @@ public class EndButton : MonoBehaviour
 
     public void Click()
     {
+        //GameObject.FindはGameoverシーンに飛ばす前につける。異なるシーンでは使えないため。
+        //ScoreUIのScoreに付いているResultメソッドの関数を呼び出す。
+        GameObject.Find("ScoreUI").GetComponent<Score>().Result();
+
         GetComponent<AudioSource>().Play();
         flg = true;
     }

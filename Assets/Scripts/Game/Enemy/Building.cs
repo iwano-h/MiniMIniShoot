@@ -59,7 +59,7 @@ public class Building : MonoBehaviour
     }
     public void CanAppear()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < Random.Range(6,13); i++)
         {
             Vector3 pos = appearPoint_.position;
             pos.x += i*Random.Range(0.1f,0.3f);

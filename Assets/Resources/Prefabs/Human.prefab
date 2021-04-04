@@ -53,6 +53,7 @@ MonoBehaviour:
   isLeft_: 1
   fireSound_: {fileID: 8300000, guid: 5bcf8e19855e4924ca5c464bec73cc4d, type: 3}
   humanrb_: {fileID: 0}
+  renderer_: {fileID: 1366471531402191965}
   scoreValue: 5
 --- !u!54 &6746797228562904727
 Rigidbody:
@@ -576,6 +577,12 @@ PrefabInstance:
 --- !u!4 &1372719887360396575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4195922041178333587, guid: 8e8824a6365d6491fbbe9fcb85ad3da9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2969571636481731724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1366471531402191965 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4305625091174615249, guid: 8e8824a6365d6491fbbe9fcb85ad3da9,
     type: 3}
   m_PrefabInstance: {fileID: 2969571636481731724}
   m_PrefabAsset: {fileID: 0}

@@ -11,6 +11,7 @@ public class Gameover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //ScoreのResultメソッドを呼ぶ
         resultHighScore.text = string.Format(resultHighScore.text, Score.highScoreStr);
         resultScore.text = string.Format(resultScore.text, Score.scoreStr, Score.scoreResult);
     }
