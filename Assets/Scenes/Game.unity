@@ -582,7 +582,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a8ea8fe2018b1274f90dca732e79f4c8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 363285aa31cfc2f46b3c2f8af2a1dcb7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -590,7 +590,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -782,6 +782,12 @@ MonoBehaviour:
   breakEffect: {fileID: 0}
   fireSound: {fileID: 0}
   scoreValue: 0
+--- !u!54 &617834694 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6746797228562904727, guid: 9ea7e7b0894d44701b14476f199ef170,
+    type: 3}
+  m_PrefabInstance: {fileID: 618394934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &618394934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -798,6 +804,22 @@ PrefabInstance:
         type: 3}
       propertyPath: BypassListenerEffects
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746797228562904712, guid: 9ea7e7b0894d44701b14476f199ef170,
+        type: 3}
+      propertyPath: breakEffect_
+      value: 
+      objectReference: {fileID: 4094517266515850939, guid: c0244950283bc4c5aa6d2abcb39dd6b6,
+        type: 3}
+    - target: {fileID: 6746797228562904712, guid: 9ea7e7b0894d44701b14476f199ef170,
+        type: 3}
+      propertyPath: humanrb_
+      value: 
+      objectReference: {fileID: 617834694}
+    - target: {fileID: 6746797228562904712, guid: 9ea7e7b0894d44701b14476f199ef170,
+        type: 3}
+      propertyPath: scoreValue_
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6746797228562904713, guid: 9ea7e7b0894d44701b14476f199ef170,
         type: 3}
@@ -1583,8 +1605,8 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 8dab5f00e20d7104bbb15d08723743bb, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.496
   m_Pitch: 1
   Loop: 0
@@ -1893,6 +1915,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 618394934}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &901323712 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6746797228562904727, guid: 9ea7e7b0894d44701b14476f199ef170,
+    type: 3}
+  m_PrefabInstance: {fileID: 1716787627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &926220602
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,10 +2190,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f5ba05433f54c42bd5f48698b351f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  highScore: 0
-  scoreText: {fileID: 1063493660}
-  highScoreText: {fileID: 641957632}
+  score_: 0
+  highScore_: 0
+  scoreText_: {fileID: 1063493660}
+  highScoreText_: {fileID: 641957632}
+  enemy_: {fileID: 4997593226862470248, guid: ea1c259a5602d42e5a3e76150ae01a0f, type: 3}
 --- !u!1 &1338449944
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,22 +2668,22 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: edaf8ecce0d9f394a9bda522b9954581, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 363285aa31cfc2f46b3c2f8af2a1dcb7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.292
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
+  Priority: 118
+  DopplerLevel: 3.72
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 213.3
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -2685,7 +2714,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.683
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2700,7 +2729,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.36666667
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2715,7 +2744,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.367
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2819,6 +2848,22 @@ PrefabInstance:
         type: 3}
       propertyPath: BypassListenerEffects
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746797228562904712, guid: 9ea7e7b0894d44701b14476f199ef170,
+        type: 3}
+      propertyPath: breakEffect_
+      value: 
+      objectReference: {fileID: 4094517266515850939, guid: c0244950283bc4c5aa6d2abcb39dd6b6,
+        type: 3}
+    - target: {fileID: 6746797228562904712, guid: 9ea7e7b0894d44701b14476f199ef170,
+        type: 3}
+      propertyPath: humanrb_
+      value: 
+      objectReference: {fileID: 901323712}
+    - target: {fileID: 6746797228562904712, guid: 9ea7e7b0894d44701b14476f199ef170,
+        type: 3}
+      propertyPath: scoreValue_
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6746797228562904713, guid: 9ea7e7b0894d44701b14476f199ef170,
         type: 3}

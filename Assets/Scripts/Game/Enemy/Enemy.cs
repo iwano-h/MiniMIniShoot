@@ -8,11 +8,11 @@ public class Enemy : MonoBehaviour
 {
     public float speed_ = 10;
     public bool isLeft_ = true;
-    public GameObject breakEffect;
+    public GameObject breakEffect_;
     private Rigidbody rb_;
-    public int scoreValue;  // これが敵を倒すと得られる点数になる
-    private Score score;//Scoreクラスのインスタンスのscore変数を参照
-    public AudioClip fireSound;
+    public int scoreValue_;  // これが敵を倒すと得られる点数になる
+    private Score score_;//Scoreクラスのインスタンスのscore変数を参照
+    public AudioClip fireSound_;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
             direction = new Vector2(1, 0);
         }
         */
-        score = GameObject.Find("ScoreUI").GetComponent<Score>();
+        score_ = GameObject.Find("ScoreUI").GetComponent<Score>();
     }
     public void OnBecameInvisible()
     {
@@ -49,14 +49,14 @@ public class Enemy : MonoBehaviour
         Debug.Log(collision.gameObject.tag);//inspectorのtagでグループ分けをする"Ballet"グループにする
         if(collision.gameObject.tag == "Bullet") {
             GameObject.Destroy(this.gameObject);//Balletグループに接触すると、このgameObjectは消える
-            score.AddScore(scoreValue);
+            score_.AddScore(scoreValue_);
             CreateEffect();
-            AudioSource.PlayClipAtPoint(fireSound, transform.position);
+            AudioSource.PlayClipAtPoint(fireSound_, transform.position);
         }
     }
     void CreateEffect()
     { 
-        GameObject effect = Instantiate(breakEffect) as GameObject;
+        GameObject effect = Instantiate(breakEffect_) as GameObject;
         effect.transform.position = gameObject.transform.position;
         
     }

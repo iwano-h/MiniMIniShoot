@@ -59,71 +59,66 @@ public class Building : MonoBehaviour
     }
     public void CanAppear()
     {
-        for (int i = 0; i < Random.Range(6,13); i++)
+        for (int i = 0; i < Random.Range(6, 13); i++)
         {
             Vector3 pos = appearPoint_.position;
-            pos.x += i*Random.Range(0.1f,0.3f);
+            pos.x += i * Random.Range(0.1f, 0.3f);
             Instantiate(human_, pos, transform.rotation);
         }
 
         return;
-
-        //連射の要領でHumanを生成をトライしたがダメでした。
-        /*canAppear_ = true;
-        bool fromLeft = Random.Range(0, 100) > 50;
-        human_.GetComponent<Human>().isLeft_ = !fromLeft;
-        Instantiate(human_, appearPoint_.position, transform.rotation);
-        const int SHOT_INTERVAL = 5;
-        timeCount++;
-        
-        //カウントが発射間隔に達したら、人を発射
-        if (timeCount > SHOT_INTERVAL)
-        {
-            timeCount = 0;  //カウント初期化
-            GameObject human = Instantiate(human_, transform.position, Quaternion.identity) as GameObject;
-            Rigidbody missileRb = human.GetComponent<Rigidbody>();
-            //humanRb_.AddForce(transform.forward * humanSpeed);
-                
-            Destroy(human_, 2.0f);
-        }
-        
-        else
-        {
-            //「Fire1」ボタンが押されていない場合、次弾用意
-            timeCount = SHOT_INTERVAL;
-        }/*
-
-        /*
-        screenSide_ = Camera.main.ViewportToWorldPoint(new Vector2(fromLeft ? 1 : -1, 0)).x;
-        //画面の両サイドの座標を取得
-        if (canAppear_ == false)
-        {
-            return;
-        }
-        if (this.transform.position.x > screenSide_ + 1)
-        {
-            canAppear_ = false;
-        }
-
-        for (int i = 0; i < 10; i++)
-        {
-            Instantiate(human_, appearPoint_.position, transform.rotation);
-        }
-        */
-
-        
-
-
-        //canAppear_ = false;
     }
-
-
     void CreateEffect()
     {
         GameObject effect = Instantiate(breakEffect) as GameObject;
         effect.transform.position = gameObject.transform.position;
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
     }
-    
+    //canAppear_ = false;
+
+
+    //連射の要領でHumanを生成をトライしたがダメでした。
+    /*canAppear_ = true;
+    bool fromLeft = Random.Range(0, 100) > 50;
+    human_.GetComponent<Human>().isLeft_ = !fromLeft;
+    Instantiate(human_, appearPoint_.position, transform.rotation);
+    const int SHOT_INTERVAL = 5;
+    timeCount++;
+
+    //カウントが発射間隔に達したら、人を発射
+    if (timeCount > SHOT_INTERVAL)
+    {
+        timeCount = 0;  //カウント初期化
+        GameObject human = Instantiate(human_, transform.position, Quaternion.identity) as GameObject;
+        Rigidbody missileRb = human.GetComponent<Rigidbody>();
+        //humanRb_.AddForce(transform.forward * humanSpeed);
+
+        Destroy(human_, 2.0f);
+    }
+
+    else
+    {
+        //「Fire1」ボタンが押されていない場合、次弾用意
+        timeCount = SHOT_INTERVAL;
+    }/*
+
+    /*
+    screenSide_ = Camera.main.ViewportToWorldPoint(new Vector2(fromLeft ? 1 : -1, 0)).x;
+    //画面の両サイドの座標を取得
+    if (canAppear_ == false)
+    {
+        return;
+    }
+    if (this.transform.position.x > screenSide_ + 1)
+    {
+        canAppear_ = false;
+    }
+
+    for (int i = 0; i < 10; i++)
+    {
+        Instantiate(human_, appearPoint_.position, transform.rotation);
+    }
+    */
+
 
 }

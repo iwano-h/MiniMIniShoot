@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class Gameover : MonoBehaviour
 {
-    [SerializeField] Text resultHighScore;
-    [SerializeField] Text resultScore;
+    [SerializeField] Text resultHighScore_;
+    [SerializeField] Text resultScore_;
 
     // Start is called before the first frame update
     void Start()
     {
         //ScoreのResultメソッドを呼ぶ
-        resultHighScore.text = string.Format(resultHighScore.text, Score.highScoreStr);
-        resultScore.text = string.Format(resultScore.text, Score.scoreStr, Score.scoreResult);
+        resultHighScore_.text = string.Format(resultHighScore_.text, Score.highScoreStr_);
+        resultScore_.text = string.Format(resultScore_.text, Score.scoreStr_, Score.scoreResult_);
     }
 
     // Update is called once per frame

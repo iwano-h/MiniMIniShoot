@@ -7,7 +7,8 @@ public class Title : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1f;//タイムスケールを進行させる
+
     }
 
     // Update is called once per frame

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Human : MonoBehaviour
 {
-    public GameObject breakEffect;
+    public GameObject breakEffect_;
     public float humanspeed_ = 1;
     public bool isLeft_ = true;
     public AudioClip fireSound_;
@@ -12,8 +12,8 @@ public class Human : MonoBehaviour
     public Renderer renderer_;//*
     Transform playerTrans_;//*
     
-    public int scoreValue;  // これが敵を倒すと得られる点数になる
-    private Score score;//Scoreクラスのインスタンスのscore変数を参照
+    public int scoreValue_;  // これが敵を倒すと得られる点数になる
+    private Score score_;//Scoreクラスのインスタンスのscore変数を参照
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +63,7 @@ public class Human : MonoBehaviour
         Vector2 direction = new Vector2(x, 0);
         //Vector2 direction = new Vector2(isLeft_ ? -1 : 1, 0);
         humanrb_.velocity = direction * humanspeed_;//velocityは渡した値で
-        score = GameObject.Find("ScoreUI").GetComponent<Score>();//よく使われる
+        score_ = GameObject.Find("ScoreUI").GetComponent<Score>();//よく使われる
 
         //プレイヤーとの距離をチェック。静的Vector3クラスのDistance関数
         if (!renderer_.isVisible && Vector3.Distance(gameObject.transform.position,playerTrans_.position) > 20)
@@ -86,13 +86,13 @@ public class Human : MonoBehaviour
             AudioSource.PlayClipAtPoint(fireSound_, transform.position);
             EffectGo();
             //Score.score += scoreValue; static(静的Scoreクラスがもつscore変数)1個だけ　参照しなくても取得できる
-            score.AddScore(scoreValue);　//インスタンスがもつscore変数　複数　unityが自動的に造る　
+            score_.AddScore(scoreValue_);　//インスタンスがもつscore変数　複数　unityが自動的に造る　
         }
     }
     
     void EffectGo()
     {
-        GameObject effect = Instantiate(breakEffect) as GameObject;
+        GameObject effect = Instantiate(breakEffect_) as GameObject;
         effect.transform.position = gameObject.transform.position;
         
     }

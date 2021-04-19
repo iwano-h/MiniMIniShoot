@@ -8,21 +8,25 @@ public class EnemyGenerator : MonoBehaviour
     [SerializeField] public float interval_;
     [SerializeField] public float timer_;
     [SerializeField] public Transform targetTrans_;//playerの位置
-
+    //public GameObject scoreText_;//難度
+    //public int score_ = 0;//難度
     // Start is called before the first frame update
     void Start()
     {
-
+        
+        
     }
+    
 
     // Update is called once per frame
     void Update()
     {
         timer_ += Time.deltaTime;
-
+        
        
         if (timer_ < interval_)
         {
+
             return;
         }
         timer_ = 0;
@@ -38,4 +42,5 @@ public class EnemyGenerator : MonoBehaviour
         enemy.GetComponent<Enemy>().isLeft_ = !fromLeft;//EnemyクラスのisLeft_は2/1の確率
         //[(enemy_, enemyPosition, Quaternion.identity)が複製され、GameObjectのenemyに代入される]よく使われる！
     }
+    
 }

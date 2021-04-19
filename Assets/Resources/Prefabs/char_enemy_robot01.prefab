@@ -1097,10 +1097,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed_: 9
   isLeft_: 1
-  breakEffect: {fileID: 5874340076252223001, guid: 8fd13e22adb2b45e392e77d0297bc581,
+  breakEffect_: {fileID: 5874340076252223001, guid: 8fd13e22adb2b45e392e77d0297bc581,
     type: 3}
-  scoreValue: 300
-  fireSound: {fileID: 8300000, guid: 662f8b0fe7f39d341a63968054ccc95d, type: 3}
+  scoreValue_: 200
+  fireSound_: {fileID: 8300000, guid: a3ff8a98bf8e5ab4fa7f8b085fb35dd4, type: 3}
 --- !u!82 &-6571893377005481384
 AudioSource:
   m_ObjectHideFlags: 0
