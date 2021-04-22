@@ -15,8 +15,8 @@ public class Score : MonoBehaviour
     public static string highScoreStr_;
 
     public static string scoreResult_;
-    public GameObject enemy_;
-    EnemyGenerator enemyGenerator_;
+    //public GameObject enemy_;スコアに応じて敵の発生速度を上げたい
+    //EnemyGenerator enemyGenerator_;
 
     // Start is called before the first frame update
     void Start()
@@ -73,9 +73,9 @@ public class Score : MonoBehaviour
         else if(score_ > 1250)
         {
             Score.scoreResult_ = "Average";
-            float interval = enemy_.GetComponent<EnemyGenerator>().interval_;
+            /*float interval = enemy_.GetComponent<EnemyGenerator>().interval_;
             interval = 8f;
-            Debug.Log(interval);
+            Debug.Log(interval);*/
         }
         else
         {

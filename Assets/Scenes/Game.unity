@@ -2194,7 +2194,6 @@ MonoBehaviour:
   highScore_: 0
   scoreText_: {fileID: 1063493660}
   highScoreText_: {fileID: 641957632}
-  enemy_: {fileID: 4997593226862470248, guid: ea1c259a5602d42e5a3e76150ae01a0f, type: 3}
 --- !u!1 &1338449944
 GameObject:
   m_ObjectHideFlags: 0
