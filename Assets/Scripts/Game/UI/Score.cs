@@ -5,7 +5,13 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public int score_ = 0;// スコア　(静的クラス)public static int score;現時点で静的にする必要ない
+    int score_ = 0;// スコア　(静的クラス)public static int score;現時点で静的にする必要ない
+    public int score
+    {
+        get { return score_; }
+        //set { score_ = value; }//プロパティ　スコア数値を取得
+    }
+
     public int highScore_ = 0;// ハイスコア
 
     public Text scoreText_;// スコアテキスト

@@ -6,14 +6,17 @@ public class EnemyGenerator : MonoBehaviour
 {
     [SerializeField] public GameObject enemy_;
     [SerializeField] public float interval_;
+    float baseInterval_ = 0;//毎回数値（パラメータ）変化を防ぐ
     [SerializeField] public float timer_;
     [SerializeField] public Transform targetTrans_;//playerの位置
-    //public GameObject scoreText_;//難度
-    //public int score_ = 0;//難度
+    
+    Score score_;//難度　変数はprivateに（_）付ける。
+    
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {   //GameObject("ScoreUI")に付いている。Scoreクラスの数値を参照
+        score_ = GameObject.Find("ScoreUI").GetComponent<Score>();
+        baseInterval_ = interval_;
         
     }
     
@@ -23,7 +26,22 @@ public class EnemyGenerator : MonoBehaviour
     {
         timer_ += Time.deltaTime;
         
-       
+        if(score_.score >= 10000)//取得されたスコアクラスのスコア数値
+        {
+            interval_ = baseInterval_ * 0.8f;
+        } else if (score_.score >= 3000)
+        {
+            interval_ = baseInterval_ * 0.9f;
+        }
+        else if (score_.score >= 1000)
+        {
+            this.gameObject.transform.LookAt(targetTrans_.position);
+        }
+        else
+        {
+            interval_ = baseInterval_;
+        }
+
         if (timer_ < interval_)
         {
 

@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Building
   - Fire
+  - Tank
   layers:
   - Default
   - TransparentFX

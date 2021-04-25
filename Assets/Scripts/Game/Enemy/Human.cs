@@ -80,7 +80,10 @@ public class Human : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Bullet"|| collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Bullet"||
+            collision.gameObject.tag == "Player"||
+            collision.gameObject.tag == "Tank"
+            )
         {
             GameObject.Destroy(this.gameObject);
             AudioSource.PlayClipAtPoint(fireSound_, transform.position);

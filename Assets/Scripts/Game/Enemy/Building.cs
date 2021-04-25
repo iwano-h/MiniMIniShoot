@@ -38,7 +38,7 @@ public class Building : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet"||collision.gameObject.tag == "Tank")
         {
             GameObject.Destroy(this.gameObject);
             AudioSource.PlayClipAtPoint(fireSound, transform.position);
