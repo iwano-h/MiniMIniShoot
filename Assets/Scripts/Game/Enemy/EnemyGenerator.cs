@@ -7,11 +7,14 @@ public class EnemyGenerator : MonoBehaviour
     [SerializeField] public GameObject enemy_;
     [SerializeField] public float interval_;
     float baseInterval_ = 0;//毎回数値（パラメータ）変化を防ぐ
-    [SerializeField] public float timer_;
+    float timer_;
     [SerializeField] public Transform targetTrans_;//playerの位置
     
     Score score_;//難度　変数はprivateに（_）付ける。
     
+    
+    
+
     // Start is called before the first frame update
     void Start()
     {   //GameObject("ScoreUI")に付いている。Scoreクラスの数値を参照
@@ -33,10 +36,6 @@ public class EnemyGenerator : MonoBehaviour
         {
             interval_ = baseInterval_ * 0.9f;
         }
-        else if (score_.score >= 1000)
-        {
-            this.gameObject.transform.LookAt(targetTrans_.position);
-        }
         else
         {
             interval_ = baseInterval_;
@@ -57,7 +56,7 @@ public class EnemyGenerator : MonoBehaviour
             targetTrans_.position.z //z
             );
         GameObject enemy = Instantiate(enemy_, enemyPosition, Quaternion.Euler(0f,180f,0f));
-        enemy.GetComponent<Enemy>().isLeft_ = !fromLeft;//EnemyクラスのisLeft_は2/1の確率
+        enemy.GetComponent<Enemy>().isLeft = !fromLeft;//EnemyクラスのisLeft_は2/1の確率
         //[(enemy_, enemyPosition, Quaternion.identity)が複製され、GameObjectのenemyに代入される]よく使われる！
     }
     

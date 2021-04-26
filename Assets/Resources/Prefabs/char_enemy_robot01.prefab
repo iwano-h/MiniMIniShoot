@@ -1095,12 +1095,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22fe801529e8447f9b9faa6a8953faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed_: 9
-  isLeft_: 1
-  breakEffect_: {fileID: 5874340076252223001, guid: 8fd13e22adb2b45e392e77d0297bc581,
+  speed: 10
+  isLeft: 1
+  breakEffect: {fileID: 3424006486150629477, guid: 095c7a840bff5478c8724c3877131d79,
     type: 3}
-  scoreValue_: 200
-  fireSound_: {fileID: 8300000, guid: a3ff8a98bf8e5ab4fa7f8b085fb35dd4, type: 3}
+  player: {fileID: 820391172322889501, guid: 6436a8e9febf140d398c644dfa062bcc, type: 3}
+  EnemyCannon: {fileID: 7363749376820352561, guid: a961b22a36a3e43e990430ad19da722c,
+    type: 3}
+  fireSound: {fileID: 8300000, guid: 662f8b0fe7f39d341a63968054ccc95d, type: 3}
+  scoreValue: 200
 --- !u!82 &-6571893377005481384
 AudioSource:
   m_ObjectHideFlags: 0

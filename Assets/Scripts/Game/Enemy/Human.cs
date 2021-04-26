@@ -13,7 +13,7 @@ public class Human : MonoBehaviour
     Transform playerTrans_;//*
     
     public int scoreValue_;  // これが敵を倒すと得られる点数になる
-    private Score score_;//Scoreクラスのインスタンスのscore変数を参照
+    Score score_;//Scoreクラスのインスタンスのscore変数を参照
 
     // Start is called before the first frame update
     void Start()
