@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMissile : MonoBehaviour
+public class LookAt : MonoBehaviour
 {
-    public float speed = 1f;
-    Rigidbody rb_;
     GameObject target_;
     // Start is called before the first frame update
     void Start()
     {
-        rb_ = GetComponent<Rigidbody>();
-        target_ = GameObject.Find("Heli_2");
+        target_ = GameObject.Find("Heli_2"); 
     }
 
     // Update is called once per frame

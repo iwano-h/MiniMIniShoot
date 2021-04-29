@@ -11,16 +11,17 @@ public class EnemyGenerator : MonoBehaviour
     [SerializeField] public Transform targetTrans_;//playerの位置
     
     Score score_;//難度　変数はprivateに（_）付ける。
-    
-    
-    
+    public GameObject enemyMissilePrefab;
+    //GameObject player_;
+
+
 
     // Start is called before the first frame update
     void Start()
     {   //GameObject("ScoreUI")に付いている。Scoreクラスの数値を参照
         score_ = GameObject.Find("ScoreUI").GetComponent<Score>();
         baseInterval_ = interval_;
-        
+        //player_ = GameObject.Find("Heli_2");
     }
     
 
@@ -35,6 +36,13 @@ public class EnemyGenerator : MonoBehaviour
         } else if (score_.score >= 3000)
         {
             interval_ = baseInterval_ * 0.9f;
+        }
+        else if (score_.score >= 1000)
+        {
+            
+            Instantiate(enemyMissilePrefab, transform.position, enemyMissilePrefab.transform.rotation);
+            
+
         }
         else
         {

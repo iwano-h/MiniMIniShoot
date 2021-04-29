@@ -6,7 +6,7 @@ public class EnemyCannon : MonoBehaviour
 {
     public GameObject enemyMissilePrefab;
     //public int shotNamber;
-    int count_ = 0;
+    //int count_ = 0;
     GameObject player_;
     Score score_;
     
@@ -28,16 +28,18 @@ public class EnemyCannon : MonoBehaviour
         if (score_.score >= 1000)
         {
             float shotSpeed = 8.0f;
-            if (count_ % 60 == 0)
-            {
-                Vector2 vec = player_.transform.position - transform.position;
-                vec.Normalize();
-                vec *= shotSpeed;
-                var t = Instantiate(enemyMissilePrefab, transform.position, enemyMissilePrefab.transform.rotation);
-                t.GetComponent<Rigidbody>().velocity = vec;
-            }
-            count_++;
+            
+            Vector2 vec = player_.transform.position - transform.position;
+            vec.Normalize();
+            vec *= shotSpeed;
+            var t = Instantiate(enemyMissilePrefab, transform.position, enemyMissilePrefab.transform.rotation);
+            t.GetComponent<Rigidbody>().velocity = vec;
+
         }
-        return;
+        else
+        {
+            return;
+        }
+        
     }
 }
