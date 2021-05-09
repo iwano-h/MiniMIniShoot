@@ -6,6 +6,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    //enum(数字に名前をつける,Nomal,Hard) クラス名（EnemyMode）
+    public enum EnemyMode
+    {
+        Nomal,
+        Hard
+    }
+    public EnemyMode enemyMode = EnemyMode.Nomal;//初期化関数
+    /*
+    private EnemyMode enemyMode_ = EnemyMode.Nomal;プロパティ
+    public EnemyMode enemyMode {
+        set { enemyMode_ = value; }
+    }
+    */
+
+
     public float speed = 10;
     public bool isLeft = true;
     public GameObject breakEffect;
@@ -13,6 +28,8 @@ public class Enemy : MonoBehaviour
     Score score_;//Scoreクラスのインスタンスのscore変数を参照
     public AudioClip fireSound;
     public int scoreValue;
+
+    public GameObject enemyMissilePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +56,15 @@ public class Enemy : MonoBehaviour
         }
         */
         score_ = GameObject.Find("ScoreUI").GetComponent<Score>();
+
+        if(enemyMode == EnemyMode.Hard)
+        {
+            if (Random.Range(1, 1000) > 970)
+            {
+                Instantiate(enemyMissilePrefab, transform.position, enemyMissilePrefab.transform.rotation);
+            }
+        }
+        
     }
     public void OnBecameInvisible()
     {

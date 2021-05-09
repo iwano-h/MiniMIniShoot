@@ -19,4 +19,13 @@ public class EnemyMissile : MonoBehaviour
     {
         this.gameObject.transform.LookAt(target_.transform.position);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag != "Player")
+        {
+            Destroy(this.gameObject);
+        }
+        
+    }
 }

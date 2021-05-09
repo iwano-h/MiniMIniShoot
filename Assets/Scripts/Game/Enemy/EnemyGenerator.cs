@@ -11,7 +11,7 @@ public class EnemyGenerator : MonoBehaviour
     [SerializeField] public Transform targetTrans_;//playerの位置
     
     Score score_;//難度　変数はprivateに（_）付ける。
-    public GameObject enemyMissilePrefab;
+    
     //GameObject player_;
 
 
@@ -37,13 +37,6 @@ public class EnemyGenerator : MonoBehaviour
         {
             interval_ = baseInterval_ * 0.9f;
         }
-        else if (score_.score >= 1000)
-        {
-            
-            Instantiate(enemyMissilePrefab, transform.position, enemyMissilePrefab.transform.rotation);
-            
-
-        }
         else
         {
             interval_ = baseInterval_;
@@ -63,9 +56,14 @@ public class EnemyGenerator : MonoBehaviour
             Random.Range(3f,10.5f), // y
             targetTrans_.position.z //z
             );
-        GameObject enemy = Instantiate(enemy_, enemyPosition, Quaternion.Euler(0f,180f,0f));
-        enemy.GetComponent<Enemy>().isLeft = !fromLeft;//EnemyクラスのisLeft_は2/1の確率
+
+        Enemy enemy = Instantiate(enemy_, enemyPosition, Quaternion.Euler(0f,180f,0f)).GetComponent<Enemy>();
+        enemy.isLeft = !fromLeft;//EnemyクラスのisLeft_は2/1の確率
         //[(enemy_, enemyPosition, Quaternion.identity)が複製され、GameObjectのenemyに代入される]よく使われる！
+        if(score_.score > 1000)
+        {
+            enemy.enemyMode = Enemy.EnemyMode.Hard;
+        }
     }
     
 }
